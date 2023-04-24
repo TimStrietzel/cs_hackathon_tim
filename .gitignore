@@ -1,0 +1,6 @@
+
+cs_hackthon_tim/target/
+dbt_packages/
+logs/
+*.DS_Store*
+*.idea*

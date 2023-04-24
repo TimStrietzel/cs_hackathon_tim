@@ -1,0 +1,14 @@
+version: 2
+# https://docs.getdbt.com/docs/building-a-dbt-project/using-sources/
+# https://docs.getdbt.com/reference/source-properties/
+
+sources:
+  - name: salesforce
+    database: y42-solution-engineering
+    schema: cs_hackathon_source_data_salesforce
+    tables:
+      - name: SF_ACCOUNTS
+      - name: SF_CONTACTS
+      - name: SF_OPPORTUNITIES
+      - name: SF_Y42_ORGS
+      - name: SF_Y42_ORGS_Y42
