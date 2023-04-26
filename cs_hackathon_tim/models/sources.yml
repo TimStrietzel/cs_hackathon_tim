@@ -1,0 +1,63 @@
+version: 2
+# https://docs.getdbt.com/docs/building-a-dbt-project/using-sources/
+# https://docs.getdbt.com/reference/source-properties/
+
+sources:
+  - name: salesforce
+    database: y42-solution-engineering
+    schema: cs_hackathon_source_data_salesforce
+    tables:
+      - name: accounts
+        identifier: SF_ACCOUNTS
+      - name: contacts
+        identifier: SF_CONTACTS
+      - name: opportunities
+        identifier: SF_OPPORTUNITIES
+      - name: orgs
+        identifier: SF_Y42_ORGS_V2
+
+  - name: frontend
+    database: y42-solution-engineering
+    schema: vdemo_public_cshackathoneumultiregion_main
+    tables:
+      - name: pages
+        identifier: Integrations_Y42_Frontend_Events_pages_1
+        type: view
+      - name: page_view
+        identifier: Integrations_Y42_Frontend_Events_pages_view
+        type: view
+      - name: session_duration
+        identifier: Integrations_Y42_Frontend_Events_session_duration
+        type: view
+      - name: session_duration_view
+        identifier: Integrations_Y42_Frontend_Events_session_duration_view
+        type: view
+
+  - name: zendesk
+    database: y42-solution-engineering
+    schema: vdemo_public_cshackathoneumultiregion_main
+    tables:
+      - name: orgs
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_organizations
+        type: view
+      - name: satisfaction
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_satisfaction_ratings
+        type: view
+      - name: audits
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_ticket_audits
+        type: view
+      - name: comments
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_ticket_comments
+        type: view
+      - name: fields
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_ticket_fields
+        type: view
+      - name: metrics
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_ticket_metrics
+        type: view
+      - name: tickets
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_tickets
+        type: view
+      - name: users
+        identifier: Integrations_Y42_Analytics_Integrations_src_zendesk_users
+        type: view
